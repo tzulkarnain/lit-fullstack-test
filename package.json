@@ -1,0 +1,24 @@
+{
+  "name": "lit-full-stack-test",
+  "version": "2.0.0",
+  "private": true,
+  "description": "LIT Full-Stack Test",
+  "scripts": {
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "start:client": "npm --workspace=lit-full-stack-test-client run dev",
+    "start:server": "npm --workspace=lit-full-stack-test-server run dev",
+    "test": "npm --workspace=lit-full-stack-test-client run test",
+    "test:server": "npm --workspace=lit-full-stack-test-server run test",
+    "build": "concurrently \"npm run build:server\" \"npm run build:client\"",
+    "build:client": "npm --workspace=lit-full-stack-test-client run build",
+    "build:server": "npm --workspace=lit-full-stack-test-server run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.12",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.3"
+  },
+  "workspaces": [
+    "./packages/*"
+  ]
+}
